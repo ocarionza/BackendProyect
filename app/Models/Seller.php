@@ -11,9 +11,13 @@ class Seller extends Model
 
     protected $fillable = [
         'nit',
+        'address',
         'description',
         'rating',
         'image',
+        'facebook',
+        'twitter',
+        'instagram',
     ];
 
     public function Shop_Comments()
