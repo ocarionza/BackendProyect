@@ -17,7 +17,7 @@ class ServiceController extends Controller
     public function index()
     {
         $services = Service::all();
-        return ServiceResource::collection($services);
+        return response()->json($services);
     }
 
     /**
@@ -51,9 +51,9 @@ class ServiceController extends Controller
      */
     public function show(ServiceResource $service)
     {
-        return (new ServiceResource($service))
-        ->response()
-        ->setStatusCode(200);
+        return response()->json($service);
+        // ->response()
+        // ->setStatusCode(200);
     }
 
     /**

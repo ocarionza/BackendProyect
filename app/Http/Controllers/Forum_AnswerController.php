@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Resources\Forum_AnswerResource;
 use App\Models\Forum_Answer;
 use Illuminate\Http\Request;
 
@@ -17,7 +16,7 @@ class Forum_AnswerController extends Controller
     public function index()
     {
         $answers = Forum_Answer::all();
-        return Forum_AnswerResource::collection($answers);
+        return response()->json($answers);
     }
 
     /**
@@ -39,8 +38,9 @@ class Forum_AnswerController extends Controller
     public function store(Request $request)
     {
         $answer = Forum_Answer::create($request->post());
-
-        return response()->json(['data' => $answer], 201);
+        return response()->json([
+            'answer'=>$answer
+        ]);
     }
 
     /**
@@ -51,9 +51,9 @@ class Forum_AnswerController extends Controller
      */
     public function show(Forum_Answer $answer)
     {
-        return (new Forum_AnswerResource($answer))
-        ->response()
-        ->setStatusCode(200);
+        return response()->json($answer);
+        // ->response()
+        // ->setStatusCode(200);
     }
 
     /**
@@ -76,9 +76,10 @@ class Forum_AnswerController extends Controller
      */
     public function update(Request $request, Forum_Answer $answer)
     {
-        $answer->update($request->all());
-
-        return response()->json(['data' => $answer], 200);
+        $answer->fill($request->post())->save();
+        return response()->json([
+            'answer' => $answer
+        ]);
     }
 
     /**
@@ -90,6 +91,8 @@ class Forum_AnswerController extends Controller
     public function destroy(Forum_Answer $answer)
     {
         $answer->delete();
-        return response(null, 204);
+        return response()->json([
+            'mensaje'=>'respuesta eliminada'
+        ]);
     }
 }

@@ -16,7 +16,7 @@ class Technician_CommentController extends Controller
     public function index()
     {
         $technicians_comments = Technician_Comment::all();
-        return Technician_CommentResource::collection($technicians_comments);
+        return response()->json($technicians_comments);
     }
 
     /**
@@ -50,9 +50,9 @@ class Technician_CommentController extends Controller
      */
     public function show(Technician_Comment $technician_comment)
     {
-        return (new Technician_CommentResource($technician_comment))
-        ->response()
-        ->setStatusCode(200);
+        return response()->json($technician_comment);
+        // ->response()
+        // ->setStatusCode(200);
     }
 
     /**

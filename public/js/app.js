@@ -5410,13 +5410,105 @@ var Crear = function Crear() {
 
 var Editar = function Editar() {
   return __webpack_require__.e(/*! import() */ "resources_js_components_user_Editar_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/user/Editar.vue */ "./resources/js/components/user/Editar.vue"));
+}; //Categorias
+
+
+var Mostrarc = function Mostrarc() {
+  return __webpack_require__.e(/*! import() */ "resources_js_components_category_Mostrar_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/category/Mostrar.vue */ "./resources/js/components/category/Mostrar.vue"));
+};
+
+var Crearc = function Crearc() {
+  return __webpack_require__.e(/*! import() */ "resources_js_components_category_Crear_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/category/Crear.vue */ "./resources/js/components/category/Crear.vue"));
+};
+
+var Editarc = function Editarc() {
+  return __webpack_require__.e(/*! import() */ "resources_js_components_category_Editar_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/category/Editar.vue */ "./resources/js/components/category/Editar.vue"));
+}; //respuestas del foro
+
+
+var Mostrarrf = function Mostrarrf() {
+  return __webpack_require__.e(/*! import() */ "resources_js_components_forum_Answer_Mostrar_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/forum_Answer/Mostrar.vue */ "./resources/js/components/forum_Answer/Mostrar.vue"));
+};
+
+var Crearrf = function Crearrf() {
+  return __webpack_require__.e(/*! import() */ "resources_js_components_forum_Answer_Crear_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/forum_Answer/Crear.vue */ "./resources/js/components/forum_Answer/Crear.vue"));
+};
+
+var Editarrf = function Editarrf() {
+  return __webpack_require__.e(/*! import() */ "resources_js_components_forum_Answer_Editar_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/forum_Answer/Editar.vue */ "./resources/js/components/forum_Answer/Editar.vue"));
+}; //preguntas del foro
+
+
+var Mostrarpf = function Mostrarpf() {
+  return __webpack_require__.e(/*! import() */ "resources_js_components_forum_Question_Mostrar_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/forum_Question/Mostrar.vue */ "./resources/js/components/forum_Question/Mostrar.vue"));
+};
+
+var Crearpf = function Crearpf() {
+  return __webpack_require__.e(/*! import() */ "resources_js_components_forum_Question_Crear_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/forum_Question/Crear.vue */ "./resources/js/components/forum_Question/Crear.vue"));
+};
+
+var Editarpf = function Editarpf() {
+  return __webpack_require__.e(/*! import() */ "resources_js_components_forum_Question_Editar_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/forum_Question/Editar.vue */ "./resources/js/components/forum_Question/Editar.vue"));
+}; //productos
+
+
+var Mostrarp = function Mostrarp() {
+  return __webpack_require__.e(/*! import() */ "resources_js_components_product_Mostrar_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/product/Mostrar.vue */ "./resources/js/components/product/Mostrar.vue"));
+};
+
+var Crearp = function Crearp() {
+  return __webpack_require__.e(/*! import() */ "resources_js_components_product_Crear_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/product/Crear.vue */ "./resources/js/components/product/Crear.vue"));
+};
+
+var Editarp = function Editarp() {
+  return __webpack_require__.e(/*! import() */ "resources_js_components_product_Editar_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/product/Editar.vue */ "./resources/js/components/product/Editar.vue"));
+}; //vendedores
+
+
+var Mostrarv = function Mostrarv() {
+  return __webpack_require__.e(/*! import() */ "resources_js_components_seller_Mostrar_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/seller/Mostrar.vue */ "./resources/js/components/seller/Mostrar.vue"));
+};
+
+var Crearv = function Crearv() {
+  return __webpack_require__.e(/*! import() */ "resources_js_components_seller_Crear_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/seller/Crear.vue */ "./resources/js/components/seller/Crear.vue"));
+};
+
+var Editarv = function Editarv() {
+  return __webpack_require__.e(/*! import() */ "resources_js_components_seller_Editar_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/seller/Editar.vue */ "./resources/js/components/seller/Editar.vue"));
+}; //servicios
+
+
+var Mostrars = function Mostrars() {
+  return __webpack_require__.e(/*! import() */ "resources_js_components_service_Mostrar_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/service/Mostrar.vue */ "./resources/js/components/service/Mostrar.vue"));
+};
+
+var Crears = function Crears() {
+  return __webpack_require__.e(/*! import() */ "resources_js_components_service_Crear_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/service/Crear.vue */ "./resources/js/components/service/Crear.vue"));
+};
+
+var Editars = function Editars() {
+  return __webpack_require__.e(/*! import() */ "resources_js_components_service_Editar_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/service/Editar.vue */ "./resources/js/components/service/Editar.vue"));
+}; //tecnicos
+
+
+var Mostrart = function Mostrart() {
+  return __webpack_require__.e(/*! import() */ "resources_js_components_technician_Mostrar_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/technician/Mostrar.vue */ "./resources/js/components/technician/Mostrar.vue"));
+};
+
+var Creart = function Creart() {
+  return __webpack_require__.e(/*! import() */ "resources_js_components_technician_Crear_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/technician/Crear.vue */ "./resources/js/components/technician/Crear.vue"));
+};
+
+var Editart = function Editart() {
+  return __webpack_require__.e(/*! import() */ "resources_js_components_technician_Editar_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/technician/Editar.vue */ "./resources/js/components/technician/Editar.vue"));
 };
 
 var routes = [{
   name: 'home',
   path: '/',
   component: Home
-}, {
+}, //user
+{
   name: 'mostrarUsuarios',
   path: '/users',
   component: Mostrar
@@ -5428,6 +5520,97 @@ var routes = [{
   name: 'editarUsuarios',
   path: '/editar/:id',
   component: Editar
+}, //Categorias
+{
+  name: 'mostrarcategorias',
+  path: '/categories',
+  component: Mostrarc
+}, {
+  name: 'crearcategoria',
+  path: '/category',
+  component: Crearc
+}, {
+  name: 'editarcategoria',
+  path: '/category/:id',
+  component: Editarc
+}, //respuestas del foro
+{
+  name: 'mostrarRespuestasforo',
+  path: '/forum_answers',
+  component: Mostrarrf
+}, {
+  name: 'crearRespuestaforo',
+  path: '/forum_answer',
+  component: Crearrf
+}, {
+  name: 'editarRespuestaforo',
+  path: '/forum_answer/:id',
+  component: Editarrf
+}, //preguntas del foro
+{
+  name: 'mostrarPreguntasforo',
+  path: '/forum_questions',
+  component: Mostrarpf
+}, {
+  name: 'crearPreguntaforo',
+  path: '/forum_question',
+  component: Crearpf
+}, {
+  name: 'editarPreguntaforo',
+  path: '/forum_question/:id',
+  component: Editarpf
+}, //productos
+{
+  name: 'mostrarProductos',
+  path: '/products',
+  component: Mostrarp
+}, {
+  name: 'crearProducto',
+  path: '/product',
+  component: Crearp
+}, {
+  name: 'editarProducto',
+  path: '/products/:id',
+  component: Editarp
+}, //vendedores
+{
+  name: 'mostrarVendedores',
+  path: '/sellers',
+  component: Mostrarv
+}, {
+  name: 'crearVendedor',
+  path: '/seller',
+  component: Crearv
+}, {
+  name: 'editarVendedor',
+  path: '/seller/:id',
+  component: Editarv
+}, //servicios
+{
+  name: 'mostrarServicios',
+  path: '/services',
+  component: Mostrars
+}, {
+  name: 'crearServicio',
+  path: '/service',
+  component: Crears
+}, {
+  name: 'editarServicio',
+  path: '/services/:id',
+  component: Editars
+}, //tecnicos
+{
+  name: 'mostrarTecnicos',
+  path: '/technicians',
+  component: Mostrart
+}, {
+  name: 'crearTecnico',
+  path: '/technician',
+  component: Creart
+}, {
+  name: 'editarTecnico',
+  path: '/technician/:id',
+  component: Editart
 }];
 
 /***/ }),
@@ -89828,7 +90011,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_components_Home_vue":1,"resources_js_components_user_Mostrar_vue":1,"resources_js_components_user_Crear_vue":1,"resources_js_components_user_Editar_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_components_Home_vue":1,"resources_js_components_user_Mostrar_vue":1,"resources_js_components_user_Crear_vue":1,"resources_js_components_user_Editar_vue":1,"resources_js_components_category_Mostrar_vue":1,"resources_js_components_category_Crear_vue":1,"resources_js_components_category_Editar_vue":1,"resources_js_components_forum_Answer_Mostrar_vue":1,"resources_js_components_forum_Answer_Crear_vue":1,"resources_js_components_forum_Answer_Editar_vue":1,"resources_js_components_forum_Question_Mostrar_vue":1,"resources_js_components_forum_Question_Crear_vue":1,"resources_js_components_forum_Question_Editar_vue":1,"resources_js_components_product_Mostrar_vue":1,"resources_js_components_product_Crear_vue":1,"resources_js_components_product_Editar_vue":1,"resources_js_components_seller_Mostrar_vue":1,"resources_js_components_seller_Crear_vue":1,"resources_js_components_seller_Editar_vue":1,"resources_js_components_service_Mostrar_vue":1,"resources_js_components_service_Crear_vue":1,"resources_js_components_service_Editar_vue":1,"resources_js_components_technician_Mostrar_vue":1,"resources_js_components_technician_Crear_vue":1,"resources_js_components_technician_Editar_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

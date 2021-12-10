@@ -46,8 +46,8 @@ export default {
             })
         },
         async actualizar(){
-            await this.axios.put(`/api/forum_Question/${this.$route.params.id}`,this.forum_Question).then(response=>{
-                this.$router.push({name:"mostrarForum_Question"})
+            await this.axios.put(`/api/forum_questions/${this.$route.params.id}`,this.forum_Question).then(response=>{
+                this.$router.push({name:"mostrarPreguntasforo"})
             }).catch(error=>{
                 console.log(error)
             })

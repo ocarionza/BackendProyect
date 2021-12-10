@@ -17,7 +17,7 @@ class SellerController extends Controller
     public function index()
     {
         $sellers = Seller::all();
-        return SellerResource::collection($sellers);
+        return response()->json($sellers);
     }
 
     /**
@@ -51,9 +51,9 @@ class SellerController extends Controller
      */
     public function show(Seller $seller)
     {
-        return (new SellerResource($seller))
-        ->response()
-        ->setStatusCode(200);
+        return response()->json($seller);
+        // ->response()
+        // ->setStatusCode(200);
     }
 
     /**

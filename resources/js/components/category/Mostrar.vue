@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-12 mb-2">
             <!-- llamamos al componente para Crear   -->
-            <router-link :to='{name:"crearCategory"}' class="btn btn-success"><i class="fas fa-plus-circle"></i></router-link>
+            <router-link :to='{name:"crearcategoria"}' class="btn btn-success"><i class="fas fa-plus-circle"></i></router-link>
         </div>
         <div class="col-12">             
                     <div class="table-responsive">
@@ -22,7 +22,7 @@
                                     <td>{{ category.image }}</td>
                                     <td>
                                         <!-- llamamos al componente para Editar     -->
-                                        <router-link :to='{name:"editarCategory",params:{id:category.id}}' class="btn btn-info"><i class="fas fa-edit"></i></router-link>
+                                        <router-link :to='{name:"editarcategoria",params:{id:category.id}}' class="btn btn-info"><i class="fas fa-edit"></i></router-link>
                                         <a type="button" @click="borrarCategory(category.id)" class="btn btn-danger"><i class="fas fa-trash"></i></a>
                                     </td>
                                 </tr>
@@ -46,7 +46,7 @@ export default {
     },
     methods:{
         async mostrarCategories(){
-            await this.axios.get('/api/category').then(response=>{
+            await this.axios.get('/api/categories').then(response=>{
                 this.categories = response.data
             }).catch(error=>{
                 console.log(error)
@@ -55,7 +55,7 @@ export default {
         },
         borrarCategory(id){
             if(confirm("¿Confirma eliminar el registro?")){
-                this.axios.delete(`/api/category/${id}`).then(response=>{
+                this.axios.delete(`/api/categories/${id}`).then(response=>{
                     this.mostrarCategories()
                 }).catch(error=>{
                     console.log(error)

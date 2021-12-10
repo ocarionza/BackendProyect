@@ -40,7 +40,7 @@ export default {
     name:"crear-category",
     data(){
         return {
-            category:{
+        category:{
                 name:"",
                 description:"",
                 image:""
@@ -49,8 +49,8 @@ export default {
     },
     methods:{
         async crear(){
-            await this.axios.post('/api/category',this.category).then(response=>{
-                this.$router.push({name:"mostrarCategories"})
+            await this.axios.post('/api/categories',this.category).then(response=>{
+                this.$router.push({name:"mostrarcategorias"})
             }).catch(error=>{
                 console.log(error)
             })

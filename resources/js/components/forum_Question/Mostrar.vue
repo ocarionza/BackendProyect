@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-12 mb-2">
             <!-- llamamos al componente para Crear   -->
-            <router-link :to='{name:"crearForum_Question"}' class="btn btn-success"><i class="fas fa-plus-circle"></i></router-link>
+            <router-link :to='{name:"crearPreguntaforo"}' class="btn btn-success"><i class="fas fa-plus-circle"></i></router-link>
         </div>
         <div class="col-12">             
             <div class="table-responsive">
@@ -17,7 +17,7 @@
                             <td>{{ forum_Question.question }}</td>
                             <td>
                                 <!-- llamamos al componente para Editar     -->
-                                <router-link :to='{name:"editarForum_Question",params:{id:forum_Question.id}}' class="btn btn-info"><i class="fas fa-edit"></i></router-link>
+                                <router-link :to='{name:"editarPreguntaforo",params:{id:forum_Question.id}}' class="btn btn-info"><i class="fas fa-edit"></i></router-link>
                                 <a type="button" @click="borrarForum_Question(forum_Question.id)" class="btn btn-danger"><i class="fas fa-trash"></i></a>
                             </td>
                         </tr>
@@ -41,7 +41,7 @@ export default {
     },
     methods:{
         async mostrarForum_Questions(){
-            await this.axios.get('/api/forum_Question').then(response=>{
+            await this.axios.get('/api/forum_questions').then(response=>{
                 this.forum_Questions = response.data
             }).catch(error=>{
                 console.log(error)
@@ -50,7 +50,7 @@ export default {
         },
         borrarForum_Question(id){
             if(confirm("¿Confirma eliminar el registro?")){
-                this.axios.delete(`/api/forum_Question/${id}`).then(response=>{
+                this.axios.delete(`/api/forum_questions/${id}`).then(response=>{
                     this.mostrarForum_Questions()
                 }).catch(error=>{
                     console.log(error)

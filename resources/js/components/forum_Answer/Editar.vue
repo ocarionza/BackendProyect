@@ -38,7 +38,7 @@ export default {
     },
     methods:{
         async mostrarForum_Answer(){
-            await this.axios.get(`/api/forum_Answer/${this.$route.params.id}`).then(response=>{
+            await this.axios.get(`/api/forum_answers/${this.$route.params.id}`).then(response=>{
                 const { answer } = response.data
                 this.forum_Answer.answer = answer
             }).catch(error=>{
@@ -46,8 +46,8 @@ export default {
             })
         },
         async actualizar(){
-            await this.axios.put(`/api/forum_Answer/${this.$route.params.id}`,this.forum_Answer).then(response=>{
-                this.$router.push({name:"mostrarForum_Answers"})
+            await this.axios.put(`/api/forum_answers/${this.$route.params.id}`,this.forum_Answer).then(response=>{
+                this.$router.push({name:"mostrarRespuestasforo"})
             }).catch(error=>{
                 console.log(error)
             })

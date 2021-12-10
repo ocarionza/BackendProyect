@@ -66,7 +66,7 @@ export default {
     },
     methods:{
         async mostrarProduct(){
-            await this.axios.get(`/api/product/${this.$route.params.id}`).then(response=>{
+            await this.axios.get(`/api/products/${this.$route.params.id}`).then(response=>{
                 const { name, description, price, brand, image } = response.data
                 this.product.name = name
                 this.product.description = description
@@ -78,7 +78,7 @@ export default {
             })
         },
         async actualizar(){
-            await this.axios.put(`/api/product/${this.$route.params.id}`,this.product).then(response=>{
+            await this.axios.put(`/api/products/${this.$route.params.id}`,this.product).then(response=>{
                 this.$router.push({name:"mostrarProducts"})
             }).catch(error=>{
                 console.log(error)

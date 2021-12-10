@@ -18,10 +18,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::apiResource('users', \App\Http\Controllers\UserControler::class);
-Route::apiResource('sellers', \App\Http\Controllers\UserControler::class);
-Route::apiResource('forum_questions', \App\Http\Controllers\Forum_QuestionController::class);
-Route::apiResource('forum_answers', \App\Http\Controllers\Forum_AnswerController::class);
+Route::resource('categories', \App\Http\Controllers\CategoryController::class);
+Route::resource('user', \App\Http\Controllers\UserController::class);
+Route::resource('forum_answers', \App\Http\Controllers\Forum_AnswerController::class);
+Route::apiResource('sellers', \App\Http\Controllers\SellerController::class);
+Route::resource('forum_questions', \App\Http\Controllers\Forum_QuestionController::class);
 Route::apiResource('shop_comments', \App\Http\Controllers\Shop_CommentController::class);
 Route::apiResource('products', \App\Http\Controllers\ProductController::class);
 Route::apiResource('services', \App\Http\Controllers\ServiceController::class);

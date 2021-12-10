@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Resources\CategoryResource;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
@@ -17,7 +16,7 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::all();
-        return CategoryResource::collection($categories);
+        return response()->json($categories);
     }
 
     /**
@@ -39,8 +38,9 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $category = Category::create($request->post());
-
-        return response()->json(['data' => $category], 201);
+        return response()->json([
+            'category'=>$category
+        ]);
     }
 
     /**
@@ -51,9 +51,8 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        return (new CategoryResource($category))
-        ->response()
-        ->setStatusCode(200);
+        return response()->json($category);
+        
     }
 
     /**
@@ -76,9 +75,10 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        $category->update($request->all());
-
-        return response()->json(['data' => $category], 200);
+        $category->fill($request->post())->save();
+        return response()->json([
+            'category' => $category
+        ]);
     }
 
     /**
@@ -90,6 +90,8 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         $category->delete();
-        return response(null, 204);
+        return response()->json([
+            'mensaje'=>'categoria eliminada'
+        ]);
     }
 }

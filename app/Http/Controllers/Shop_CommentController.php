@@ -17,7 +17,7 @@ class Shop_CommentController extends Controller
     public function index()
     {
         $comments = Shop_comment::all();
-        return Shop_CommentResource::collection($comments);
+        return response()->json($comments);
     }
 
     /**
@@ -51,9 +51,9 @@ class Shop_CommentController extends Controller
      */
     public function show(Shop_comment $comment)
     {
-        return (new Shop_CommentResource($comment))
-        ->response()
-        ->setStatusCode(200);
+        return response()->json($comment);
+        // ->response()
+        // ->setStatusCode(200);
     }
 
     /**

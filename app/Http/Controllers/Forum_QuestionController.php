@@ -17,7 +17,7 @@ class Forum_QuestionController extends Controller
     public function index()
     {
         $question = Forum_Question::all();
-        return Forum_QuestionResource::collection($question);
+        return response()->json($question);
     }
 
     /**
@@ -39,8 +39,9 @@ class Forum_QuestionController extends Controller
     public function store(Request $request)
     {
         $questions = Forum_Question::create($request->post());
-
-        return response()->json(['data' => $questions], 201);
+        return response()->json([
+            'question'=>$questions
+        ]);
     }
 
     /**
@@ -51,9 +52,9 @@ class Forum_QuestionController extends Controller
      */
     public function show(Forum_Question $question)
     {
-        return (new Forum_QuestionResource($question))
-        ->response()
-        ->setStatusCode(200);
+        return response()->json($question);
+        // ->response()
+        // ->setStatusCode(200);
     }
 
     /**
@@ -76,9 +77,10 @@ class Forum_QuestionController extends Controller
      */
     public function update(Request $request, Forum_Question $question)
     {
-        $question->update($request->all());
-
-        return response()->json(['data' => $question], 200);
+        $question->fill($request->post())->save();
+        return response()->json([
+            'question' => $question
+        ]);
     }
 
     /**
@@ -90,6 +92,8 @@ class Forum_QuestionController extends Controller
     public function destroy(Forum_Question $question)
     {
         $question->delete();
-        return response(null, 204);
+        return response()->json([
+            'mensaje'=>'pregunta eliminada'
+        ]);
     }
 }

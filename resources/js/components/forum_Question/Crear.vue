@@ -29,14 +29,15 @@ export default {
     data(){
         return {
             forum_Question:{
+                user_id: 1,
                 question:""
             }
         }
     },
     methods:{
         async crear(){
-            await this.axios.post('/api/forum_Question',this.forum_Question).then(response=>{
-                this.$router.push({name:"forum_Questions"})
+            await this.axios.post('/api/forum_questions',this.forum_Question).then(response=>{
+                this.$router.push({name:"mostrarPreguntasforo"})
             }).catch(error=>{
                 console.log(error)
             })

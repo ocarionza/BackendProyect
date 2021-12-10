@@ -17,7 +17,7 @@ class TechnicianController extends Controller
     public function index()
     {
         $technicians = Technician::all();
-        return TechnicianResource::collection($technicians);
+        return response()->json($technicians);
     }
 
     /**
@@ -51,9 +51,9 @@ class TechnicianController extends Controller
      */
     public function show(Technician $technician)
     {
-        return (new TechnicianResource($technician))
-        ->response()
-        ->setStatusCode(200);
+        return response()->json($technician);
+        // ->response()
+        // ->setStatusCode(200);
     }
 
     /**

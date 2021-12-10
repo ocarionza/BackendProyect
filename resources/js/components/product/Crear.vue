@@ -55,6 +55,8 @@ export default {
             product:{
                 name:"",
                 description:"",
+                seller_id: null,
+                category_id: null,
                 price:"",
                 brand:"",
                 image:""
@@ -63,8 +65,8 @@ export default {
     },
     methods:{
         async crear(){
-            await this.axios.post('/api/product',this.product).then(response=>{
-                this.$router.push({name:"mostrarProducts"})
+            await this.axios.post('/api/products',this.product).then(response=>{
+                this.$router.push({name:"mostrarProductos"})
             }).catch(error=>{
                 console.log(error)
             })

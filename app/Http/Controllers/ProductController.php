@@ -17,7 +17,7 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::all();
-        return ProductResource::collection($products);
+        return response()->json($products);
     }
 
     /**
@@ -39,8 +39,9 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $product = Product::create($request->post());
-
-        return response()->json(['data' => $product], 201);
+        return response()->json([
+            'product'=>$product
+        ]);
     }
 
     /**
@@ -51,9 +52,9 @@ class ProductController extends Controller
      */
     public function show(ProductResource $product)
     {
-        return (new ProductResource($product))
-        ->response()
-        ->setStatusCode(200);
+        return response()->json($product);
+        // ->response()
+        // ->setStatusCode(200);
     }
 
     /**
@@ -76,9 +77,10 @@ class ProductController extends Controller
      */
     public function update(Request $request, ProductResource $product)
     {
-        $product->update($request->all());
-
-        return response()->json(['data' => $product], 200);
+        $product->fill($request->post())->save();
+        return response()->json([
+            'product' => $product
+        ]); 
     }
 
     /**
@@ -90,6 +92,8 @@ class ProductController extends Controller
     public function destroy(ProductResource $product)
     {
         $product->delete();
-        return response(null, 204);
+        return response()->json([
+            'mensaje'=>'producto eliminado'
+        ]);
     }
 }

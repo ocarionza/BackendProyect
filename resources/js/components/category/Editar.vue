@@ -52,7 +52,7 @@ export default {
     },
     methods:{
         async mostrarCategory(){
-            await this.axios.get(`/api/category/${this.$route.params.id}`).then(response=>{
+            await this.axios.get(`/api/categories/${this.$route.params.id}`).then(response=>{
                 const { name, description, image } = response.data
                 this.category.name = name
                 this.category.description = description
@@ -62,8 +62,8 @@ export default {
             })
         },
         async actualizar(){
-            await this.axios.put(`/api/category/${this.$route.params.id}`,this.category).then(response=>{
-                this.$router.push({name:"mostrarCategories"})
+            await this.axios.put(`/api/categories/${this.$route.params.id}`,this.category).then(response=>{
+                this.$router.push({name:"mostrarcategorias"})
             }).catch(error=>{
                 console.log(error)
             })

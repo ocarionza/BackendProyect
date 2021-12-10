@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-12 mb-2">
             <!-- llamamos al componente para Crear   -->
-            <router-link :to='{name:"crearProduct"}' class="btn btn-success"><i class="fas fa-plus-circle"></i></router-link>
+            <router-link :to='{name:"crearProducto"}' class="btn btn-success"><i class="fas fa-plus-circle"></i></router-link>
         </div>
         <div class="col-12">             
                     <div class="table-responsive">
@@ -26,7 +26,7 @@
                                     <td>{{ product.image }}</td>
                                     <td>
                                         <!-- llamamos al componente para Editar     -->
-                                        <router-link :to='{name:"editarProduct",params:{id:product.id}}' class="btn btn-info"><i class="fas fa-edit"></i></router-link>
+                                        <router-link :to='{name:"editarProducto",params:{id:product.id}}' class="btn btn-info"><i class="fas fa-edit"></i></router-link>
                                         <a type="button" @click="borrarProduct(product.id)" class="btn btn-danger"><i class="fas fa-trash"></i></a>
                                     </td>
                                 </tr>
@@ -51,7 +51,7 @@ export default {
     },
     methods:{
         async mostrarProducts(){
-            await this.axios.get('/api/product').then(response=>{
+            await this.axios.get('/api/products').then(response=>{
                 this.products = response.data
             }).catch(error=>{
                 console.log(error)
@@ -60,7 +60,7 @@ export default {
         },
         borrarProduct(id){
             if(confirm("¿Confirma eliminar el registro?")){
-                this.axios.delete(`/api/product/${id}`).then(response=>{
+                this.axios.delete(`/api/products/${id}`).then(response=>{
                     this.mostrarproducts()
                 }).catch(error=>{
                     console.log(error)
