@@ -98,16 +98,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return _this.axios.get("/api/user/".concat(_this.$route.params.email)).then(function (response) {
+                return _this.axios.get("/api/user/".concat(_this.$route.params.id)).then(function (response) {
                   var _response$data = response.data,
                       name = _response$data.name,
                       email = _response$data.email,
                       password = _response$data.password,
                       image = _response$data.image;
-                  _this.seller.name = name;
-                  _this.seller.email = email;
-                  _this.seller.password = password;
-                  _this.seller.image = image;
+                  _this.user.name = name;
+                  _this.user.email = email;
+                  _this.user.password = password;
+                  _this.user.image = image;
                 })["catch"](function (error) {
                   console.log(error);
                 });
@@ -129,9 +129,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context2.prev = _context2.next) {
               case 0:
                 _context2.next = 2;
-                return _this2.axios.put("/api/user/".concat(_this2.$route.params.email), _this2.user).then(function (response) {
+                return _this2.axios.put("/api/user/".concat(_this2.$route.params.id), _this2.user).then(function (response) {
                   _this2.$router.push({
-                    name: "mostrarUser"
+                    name: "mostrarUsuarios"
                   });
                 })["catch"](function (error) {
                   console.log(error);

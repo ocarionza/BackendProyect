@@ -59,19 +59,19 @@ export default {
     },
     methods:{
         async mostrarUser(){
-            await this.axios.get(`/api/user/${this.$route.params.email}`).then(response=>{
+            await this.axios.get(`/api/user/${this.$route.params.id}`).then(response=>{
                 const { name, email, password, image } = response.data
-                this.seller.name = name
-                this.seller.email = email
-                this.seller.password = password
-                this.seller.image = image
+                this.user.name = name
+                this.user.email = email
+                this.user.password = password
+                this.user.image = image
             }).catch(error=>{
                 console.log(error)
             })
         },
         async actualizar(){
-            await this.axios.put(`/api/user/${this.$route.params.email}`,this.user).then(response=>{
-                this.$router.push({name:"mostrarUser"})
+            await this.axios.put(`/api/user/${this.$route.params.id}`,this.user).then(response=>{
+                this.$router.push({name:"mostrarUsuarios"})
             }).catch(error=>{
                 console.log(error)
             })

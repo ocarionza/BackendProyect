@@ -74,7 +74,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: "crearUsuarios",
+  name: "crearusuario",
   data: function data() {
     return {
       user: {

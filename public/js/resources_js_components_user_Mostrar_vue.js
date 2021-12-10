@@ -65,7 +65,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "users",
   data: function data() {
@@ -101,11 +100,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee);
       }))();
     },
-    borrarUser: function borrarUser(email) {
+    borrarUser: function borrarUser(id) {
       var _this2 = this;
 
       if (confirm("¿Confirma eliminar el registro?")) {
-        this.axios["delete"]("/api/user/".concat(email)).then(function (response) {
+        this.axios["delete"]("/api/user/".concat(id)).then(function (response) {
           _this2.mostrarUsers();
         })["catch"](function (error) {
           console.log(error);
@@ -994,14 +993,12 @@ var render = function () {
           _c(
             "tbody",
             _vm._l(_vm.users, function (user) {
-              return _c("tr", { key: user.email }, [
+              return _c("tr", { key: user.id }, [
+                _c("td", [_vm._v(_vm._s(user.image))]),
+                _vm._v(" "),
                 _c("td", [_vm._v(_vm._s(user.name))]),
                 _vm._v(" "),
                 _c("td", [_vm._v(_vm._s(user.email))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(user.password))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(user.image))]),
                 _vm._v(" "),
                 _c(
                   "td",
@@ -1012,8 +1009,8 @@ var render = function () {
                         staticClass: "btn btn-info",
                         attrs: {
                           to: {
-                            name: "editarUser",
-                            params: { email: user.email },
+                            name: "editarUsuarios",
+                            params: { id: user.id },
                           },
                         },
                       },
@@ -1027,7 +1024,7 @@ var render = function () {
                         attrs: { type: "button" },
                         on: {
                           click: function ($event) {
-                            return _vm.borrarUser(user.email)
+                            return _vm.borrarUser(user.id)
                           },
                         },
                       },
@@ -1052,13 +1049,13 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("thead", { staticClass: "bg-primary text-white" }, [
       _c("tr", [
+        _c("th", [_vm._v("Foto")]),
+        _vm._v(" "),
         _c("th", [_vm._v("Nombre")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Correo Electronico")]),
+        _c("th", [_vm._v("Correo electronico")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Contraseña")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Imagen")]),
+        _c("th", [_vm._v("operaciones")]),
       ]),
     ])
   },
