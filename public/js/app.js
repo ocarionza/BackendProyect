@@ -5401,15 +5401,15 @@ var Home = function Home() {
 
 
 var Mostrar = function Mostrar() {
-  return Promise.resolve().then(function webpackMissingModule() { var e = new Error("Cannot find module './components/user/Mostrar.vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; });
+  return __webpack_require__.e(/*! import() */ "resources_js_components_user_Mostrar_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/user/Mostrar.vue */ "./resources/js/components/user/Mostrar.vue"));
 };
 
 var Crear = function Crear() {
-  return Promise.resolve().then(function webpackMissingModule() { var e = new Error("Cannot find module './components/user/Crear.vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; });
+  return __webpack_require__.e(/*! import() */ "resources_js_components_user_Crear_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/user/Crear.vue */ "./resources/js/components/user/Crear.vue"));
 };
 
 var Editar = function Editar() {
-  return Promise.resolve().then(function webpackMissingModule() { var e = new Error("Cannot find module './components/user/Editar.vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; });
+  return __webpack_require__.e(/*! import() */ "resources_js_components_user_Editar_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/user/Editar.vue */ "./resources/js/components/user/Editar.vue"));
 };
 
 var routes = [{
@@ -5418,7 +5418,7 @@ var routes = [{
   component: Home
 }, {
   name: 'mostrarUsuarios',
-  path: '/blogs',
+  path: '/users',
   component: Mostrar
 }, {
   name: 'crearUsuarios',
@@ -28028,7 +28028,7 @@ var render = function () {
                       "router-link",
                       {
                         staticClass: "nav-link",
-                        attrs: { "exact-active-class": "active", to: "/blogs" },
+                        attrs: { "exact-active-class": "active", to: "/user" },
                       },
                       [_vm._v("Blogs")]
                     ),
@@ -89828,7 +89828,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if (chunkId === "resources_js_components_Home_vue") return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_components_Home_vue":1,"resources_js_components_user_Mostrar_vue":1,"resources_js_components_user_Crear_vue":1,"resources_js_components_user_Editar_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

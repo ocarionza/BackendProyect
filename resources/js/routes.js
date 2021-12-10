@@ -13,7 +13,7 @@ export const routes = [
     },
     {
         name: 'mostrarUsuarios',
-        path: '/blogs',
+        path: '/users',
         component: Mostrar
     },
     {
