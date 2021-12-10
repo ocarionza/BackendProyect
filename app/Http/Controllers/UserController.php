@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\UserResource;
 use App\Models\User;
 use Illuminate\Http\Request;
 
-class UserController extends Controller
+
+class UserControler extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +17,7 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
-        return response()->json($users);
+        return UserResource::collection($users);
     }
 
     /**
@@ -50,7 +52,9 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        return response()->json($user);
+        return (new UserResource($user))
+        ->response()
+        ->setStatusCode(200);
     }
 
     /**

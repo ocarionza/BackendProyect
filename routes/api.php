@@ -18,4 +18,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::resource('user', \App\Http\Controllers\UserController::class);
+Route::apiResource('users', \App\Http\Controllers\UserControler::class);
+Route::apiResource('sellers', \App\Http\Controllers\UserControler::class);
+Route::apiResource('forum_questions', \App\Http\Controllers\Forum_QuestionController::class);
+Route::apiResource('forum_answers', \App\Http\Controllers\Forum_AnswerController::class);
+Route::apiResource('shop_comments', \App\Http\Controllers\Shop_CommentController::class);
+Route::apiResource('products', \App\Http\Controllers\ProductController::class);
+Route::apiResource('services', \App\Http\Controllers\ServiceController::class);
+Route::apiResource('technicians', \App\Http\Controllers\TechnicianController::class);
+Route::apiResource('technicians_comments', \App\Http\Controllers\Technician_CommentController::class);
