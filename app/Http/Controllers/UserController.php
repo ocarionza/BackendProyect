@@ -7,7 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 
 
-class UserControler extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +17,8 @@ class UserControler extends Controller
     public function index()
     {
         $users = User::all();
-        return UserResource::collection($users);
+        return response()->json($users);
+        //return UserResource::collection($users);
     }
 
     /**
@@ -52,9 +53,10 @@ class UserControler extends Controller
      */
     public function show(User $user)
     {
-        return (new UserResource($user))
-        ->response()
-        ->setStatusCode(200);
+        return response()->json($user);
+        // return (new UserResource($user))
+        // ->response()
+        // ->setStatusCode(200);
     }
 
     /**
