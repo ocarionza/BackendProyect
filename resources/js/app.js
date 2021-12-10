@@ -8,8 +8,25 @@ require('./bootstrap');
 
 window.Vue = require('vue').default;
 
+import App from './components/App.vue';
 import Vuetify from 'vuetify';
 Vue.use(Vuetify);
+
+//importamos Axios
+import VueAxios from 'vue-axios';
+import axios from 'axios';
+
+//Importamos y configuramos el Vue-router
+import VueRouter from 'vue-router';
+import {routes} from './routes';
+
+Vue.use(VueRouter);
+Vue.use(VueAxios, axios);
+
+const router = new VueRouter({
+    mode: 'history',
+    routes: routes
+});
 
 /**
  * The following block of code may be used to automatically register your
@@ -22,15 +39,14 @@ Vue.use(Vuetify);
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-const app = new Vue({
+ const app = new Vue({
     el: '#app',
-    vuetify: new Vuetify(),
+    router: router,
+    render: h => h(App),
 });
